@@ -1,20 +1,13 @@
 <%= simple_form_for(@employee) do |f| %>
   ...
-  <div class="modal fade" id="editDepartmentModal" tabindex="-1" aria-labelledby="editDepartmentModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editDepartmentModalLabel">Edit Department</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <%= f.input :department_id, collection: Department.all.map { |d| [d.name, d.id] }, include_blank: true %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <%= f.submit 'Save', class: 'btn btn-primary' %>
-        </div>
-      </div>
+  <div style="display: flex; flex-direction: column;">
+    <p><strong>Employee name:</strong> <%= @employee.first_name %> <%= @employee.last_name %></p>
+    <div style="margin-bottom: 10px;">
+      <%= f.input :department_id, collection: Department.all.map { |d| [d.name, d.id] }, include_blank: true, style: 'width: 100%; padding: 5px;' %>
+    </div>
+    <div style="display: flex; justify-content: flex-start;">
+      <button type="button" style="background-color: #6c757d; color: #fff; padding: 6px 12px; margin-right: 10px; border-radius: 4px; cursor: pointer;">Close</button>
+      <%= f.submit 'Save', style: 'background-color: #007bff; color: #fff; padding: 6px 12px; border-radius: 4px; cursor: pointer;' %>
     </div>
   </div>
   ...

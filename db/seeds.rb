@@ -25,4 +25,5 @@ Employee.create(
   salary: 900000,
   department: department1
 )
+
 # Create more sample employees if needed
