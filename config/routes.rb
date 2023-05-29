@@ -8,5 +8,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :departments
+
   root 'employees#index'
 end
