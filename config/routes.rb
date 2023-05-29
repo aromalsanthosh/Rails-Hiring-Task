@@ -7,4 +7,6 @@ Rails.application.routes.draw do
       patch 'update_department'
     end
   end
+
+  root 'employees#index'
 end
